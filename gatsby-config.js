@@ -8,10 +8,15 @@ module.exports = {
     author: '@chrisbiscardi',
   },
   plugins: [
+    
+    "gatsby-plugin-mdx",
+    // Add a collection called "posts" that looks
+    // for files in content/posts/
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        defaultLayouts: { default: path.resolve('./src/components/layout.js') },
+        name: "posts",
+        path: `${__dirname}/content/posts/`,
       },
     },
     'gatsby-plugin-react-helmet',
